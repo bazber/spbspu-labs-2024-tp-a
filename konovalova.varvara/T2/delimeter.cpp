@@ -10,7 +10,6 @@ std::istream & konovalova::operator>>(std::istream & in, delimeter_char && expec
   {
     return in;
   }
-
   char c;
   in >> c;
   if(c != expected.expected)
@@ -27,7 +26,6 @@ std::istream & konovalova::operator>>(std::istream & in, delimeter_string && str
   {
     return in;
   }
-
   char c;
   for (size_t i = 0; i < str.text.size(); i++)
   {

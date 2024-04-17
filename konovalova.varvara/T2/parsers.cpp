@@ -12,7 +12,6 @@ std::istream & konovalova::operator>>(std::istream & in, cmpType && cmp)
   {
     return in;
   }
-
   double real, imag;
   in >> std::fixed >> delimeter_string{"#c("} >> real >> imag >> delimeter_string{")"};
   cmp.data = std::complex<double>(real, imag);
@@ -26,7 +25,6 @@ std::ostream & konovalova::operator<<(std::ostream & out, cmpType && cmp)
   {
     return out;
   }
-
   out << std::fixed << std::setprecision(1);
   out << "#c(" << cmp.data.real() << " " << cmp.data.imag() << ")";
   return out;
@@ -39,7 +37,6 @@ std::istream & konovalova::operator>>(std::istream & in, strType && str)
   {
     return in;
   }
-
   in >> delimeter_char{'"'};
   std::getline(in, str.data, '"');
   return in;
@@ -52,7 +49,6 @@ std::ostream & konovalova::operator<<(std::ostream & out, strType && str)
   {
     return out;
   }
-
   out << "\"" << str.data << "\"";
   return out;
 }
@@ -64,7 +60,6 @@ std::istream & konovalova::operator>>(std::istream & in, ullOctType && ullOct)
   {
     return in;
   }
-
   in >> delimeter_char{'0'} >> std::oct >> ullOct.data;
   return in;
 }
@@ -76,7 +71,6 @@ std::ostream & konovalova::operator<<(std::ostream & out, ullOctType && ullOct)
   {
     return out;
   }
-
   out << "0" << std::oct << ullOct.data;
   return out;
 }
