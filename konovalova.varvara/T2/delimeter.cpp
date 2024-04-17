@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-std::istream & konovalova::operator>>(std::istream & in, delimeter_char && expected)
+std::istream& konovalova::operator>>(std::istream& in, delimeter_char&& expected)
 {
   std::istream::sentry guard(in);
   if(!guard)
@@ -19,7 +19,7 @@ std::istream & konovalova::operator>>(std::istream & in, delimeter_char && expec
   return in;
 }
 
-std::istream & konovalova::operator>>(std::istream & in, delimeter_string && str)
+std::istream& konovalova::operator>>(std::istream& in, delimeter_string&& str)
 {
   std::istream::sentry guard(in);
   if(!guard)

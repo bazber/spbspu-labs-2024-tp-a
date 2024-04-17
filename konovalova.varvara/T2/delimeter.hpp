@@ -14,7 +14,7 @@ namespace konovalova
   {
     std::string text;
   };
-  std::istream & operator>>(std::istream & in, delimeter_char && expected);
-  std::istream & operator>>(std::istream & in, delimeter_string && str);
+  std::istream& operator>>(std::istream& in, delimeter_char&& expected);
+  std::istream& operator>>(std::istream& in, delimeter_string&& str);
 }
 #endif

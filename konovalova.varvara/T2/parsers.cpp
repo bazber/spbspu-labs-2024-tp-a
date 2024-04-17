@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <string>
 
-std::istream & konovalova::operator>>(std::istream & in, cmpType && cmp)
+std::istream& konovalova::operator>>(std::istream& in, cmpType&& cmp)
 {
   std::istream::sentry guard(in);
   if(!guard)
@@ -18,7 +18,7 @@ std::istream & konovalova::operator>>(std::istream & in, cmpType && cmp)
   return in;
 }
 
-std::ostream & konovalova::operator<<(std::ostream & out, cmpType && cmp)
+std::ostream& konovalova::operator<<(std::ostream& out, cmpType&& cmp)
 {
   std::ostream::sentry guard(out);
   if(!guard)
@@ -30,7 +30,7 @@ std::ostream & konovalova::operator<<(std::ostream & out, cmpType && cmp)
   return out;
 }
 
-std::istream & konovalova::operator>>(std::istream & in, strType && str)
+std::istream& konovalova::operator>>(std::istream& in, strType&& str)
 {
   std::istream::sentry guard(in);
   if(!guard)
@@ -42,7 +42,7 @@ std::istream & konovalova::operator>>(std::istream & in, strType && str)
   return in;
 }
 
-std::ostream & konovalova::operator<<(std::ostream & out, strType && str)
+std::ostream& konovalova::operator<<(std::ostream& out, strType&& str)
 {
   std::ostream::sentry guard(out);
   if(!guard)
@@ -53,7 +53,7 @@ std::ostream & konovalova::operator<<(std::ostream & out, strType && str)
   return out;
 }
 
-std::istream & konovalova::operator>>(std::istream & in, ullOctType && ullOct)
+std::istream& konovalova::operator>>(std::istream& in, ullOctType&& ullOct)
 {
   std::istream::sentry guard(in);
   if(!guard)
@@ -64,7 +64,7 @@ std::istream & konovalova::operator>>(std::istream & in, ullOctType && ullOct)
   return in;
 }
 
-std::ostream & konovalova::operator<<(std::ostream & out, ullOctType && ullOct)
+std::ostream& konovalova::operator<<(std::ostream& out, ullOctType&& ullOct)
 {
   std::ostream::sentry guard(out);
   if(!guard)
