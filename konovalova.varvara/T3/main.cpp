@@ -5,6 +5,7 @@
 #include <limits>
 
 #include "fig.hpp"
+#include "command.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -34,5 +35,54 @@ int main(int argc, char* argv[])
             file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
-    return 0;
+    try
+    {
+        while (!std::cin.eof())
+        {
+            std::string cmd;
+            std::cin >> cmd;
+            try
+            {
+                if (cmd == "AREA")
+                {
+                    command::area(data);
+                }
+                else if (cmd == "MAX")
+                {
+                    command::max(data);
+                }
+                else if (cmd == "MIN")
+                {
+                    command::min(data);
+                }
+                else if (cmd == "COUNT")
+                {
+                    command::count(data);
+                }
+                else if (cmd == "RMECHO")
+                {
+                    command::rmecho(data);
+                }
+                else if (cmd == "SAME")
+                {
+                    command::same(data);
+                }
+                else if (cmd != "")
+                {
+                    throw "<INVALID COMMAND>";
+                }
+            }
+            catch (const char* err)
+            {
+                std::cout << err << std::endl;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        }
+        return 0;
+    }
+    catch (...)
+    {
+        std::cerr << "Something got wrong..." << std::endl;
+        return 1;
+    }
 }
