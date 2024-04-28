@@ -6,9 +6,7 @@
 
 #include "fig.hpp"
 
-using namespace konovalova;
-
-int main(int argc, char* argv[] )
+int main(int argc, char* argv[])
 {
     if (argc != 2)
     {
@@ -24,9 +22,9 @@ int main(int argc, char* argv[] )
         return 1;
     }
     std::cout << std::setprecision(1) << std::fixed;
-    std::vector<Polygon> data;
-    using input_it_t = std::istream_iterator<Polygon>;
-    using output_it_t = std::ostream_iterator<Polygon>;
+    std::vector<konovalova::Polygon> data;
+    using input_it_t = std::istream_iterator<konovalova::Polygon>;
+    using output_it_t = std::ostream_iterator<konovalova::Polygon>;
     while (!file.eof())
     {
         std::copy(input_it_t{file}, input_it_t{}, std::back_inserter(data));
@@ -36,4 +34,5 @@ int main(int argc, char* argv[] )
             file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
+    return 0;
 }
