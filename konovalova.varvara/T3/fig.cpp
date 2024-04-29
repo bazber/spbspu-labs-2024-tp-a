@@ -43,7 +43,7 @@ bool konovalova::Polygon::operator<(const Polygon& other) const
 double konovalova::Polygon::area(void) const
 {
     double res = 0;
-    for (int i = 1; i < points.size(); i++)
+    for (int i = 1; i < static_cast<int>(points.size()); i++)
     {
         res += points[i - 1].x * points[i].y;
         res -= points[i].x * points[i - 1].y;
